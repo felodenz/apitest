@@ -1,13 +1,12 @@
 const queryHandle = (req, res) => {
-  const id = req.query.id;
-  const number = req.query.number;
+  const {id,number} = req.query;
   const proccess = req.body.filter(
-    (e) => e.BodyId == id && e.BodyIdNumber == number
+    (bodyObject) => bodyObject.BodyId == id && bodyObject.BodyIdNumber == number
   );
   if (proccess.length > 0) {
-    proccess.map((e) => {
+    proccess.map((paired) => {
       // res.
-      res.status(200).json({ name: e.name });
+      res.status(200).json({ name: paired.name });
     });
   } else {
     res.status(404).json({ message: "not found" });
