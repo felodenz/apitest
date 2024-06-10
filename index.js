@@ -1,5 +1,4 @@
 import express from "express";
-import nodemon from "nodemon";
 import router from "./handler/handler.js";
 
 const app = express();
