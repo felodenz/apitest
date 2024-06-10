@@ -1,6 +1,6 @@
 const paramsHandle = (req, res) => {
   const proccess = req.body.filter(
-    (object) => object.BodyId == req.headers.id && object.BodyIdNumber == req.params.number
+    (bodyObject) => bodyObject.BodyId == req.headers.id && bodyObject.BodyIdNumber == req.params.number
   );
   if (proccess.length > 0) {
     proccess.map((paired)=>res.json(paired));
