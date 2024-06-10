@@ -1,7 +1,7 @@
-import express from "express";
+import {Router} from "express";
 import paramsHandle from "../controllers/paramsHandler.js";
 import queryHandle from "../controllers/queryHandler.js";
-const router = express.Router();
+const router = Router();
 router.use(express.json());
 
 router.post("/trainingv1.0", queryHandle);
